@@ -212,25 +212,9 @@ footer a{color:rgba(255,255,255,.7)}
         </select>
         <div style="position:absolute;right:18px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:18px">▾</div>
       </div>
-      <a id="state-go-btn" href="#" onclick="return false;" style="background:var(--accent);color:#fff;padding:16px 28px;border-radius:14px;font-weight:700;font-size:15px;white-space:nowrap;opacity:0.5;pointer-events:none;transition:opacity .2s">Read Guide →</a>
+      <button onclick="var v=document.getElementById('state-selector').value;if(v){window.location=v;}else{alert('Please select a state first!');};" style="background:var(--accent);color:#fff;padding:16px 28px;border-radius:14px;font-weight:700;font-size:15px;white-space:nowrap;border:none;cursor:pointer;font-family:'Nunito',sans-serif">Read Guide →</button>
     </div>
   </div>
-
-  <script>
-  function goToState(val) {
-    var btn = document.getElementById('state-go-btn');
-    if (val) {
-      btn.href = val;
-      btn.style.opacity = '1';
-      btn.style.pointerEvents = 'auto';
-      window.location = val;
-    } else {
-      btn.href = '#';
-      btn.style.opacity = '0.5';
-      btn.style.pointerEvents = 'none';
-    }
-  }
-  </script>
 
   <div class="states-grid">
 
