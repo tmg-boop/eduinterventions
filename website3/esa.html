@@ -187,6 +187,51 @@ footer a{color:rgba(255,255,255,.7)}
     <p><strong>Not sure if you qualify?</strong> Most ESA programs are open to all K–12 students in the state — regardless of income. Many families are surprised to discover they already qualify. Contact us and we'll help you figure it out for free.</p>
   </div>
 
+  <!-- STATE SELECTOR -->
+  <div style="margin-bottom:40px">
+    <div style="background:linear-gradient(135deg,#1A2456,#3547C8);border-radius:20px;padding:32px 36px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="flex:1;min-width:220px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px">Jump to Your State</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;line-height:1.3">Find your ESA program instantly</div>
+      </div>
+      <div style="flex:2;min-width:260px;position:relative">
+        <select id="state-selector" onchange="goToState(this.value)" style="width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:none;border-radius:14px;padding:16px 52px 16px 20px;font-size:16px;font-weight:700;color:#1A2456;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.15);outline:none">
+          <option value="">🗺️ Select your state...</option>
+          <option value="alabama-esa-tutoring.html">🌸 Alabama — CHOOSE Act</option>
+          <option value="arizona-esa-tutoring.html">🌵 Arizona — Empowerment Scholarship</option>
+          <option value="arkansas-esa-tutoring.html">🌲 Arkansas — Education Freedom Account</option>
+          <option value="florida-esa-tutoring.html">🌴 Florida — Family Empowerment Scholarship</option>
+          <option value="georgia-esa-tutoring.html">🍑 Georgia — Special Needs &amp; Promise Scholarship</option>
+          <option value="indiana-esa-tutoring.html">🌽 Indiana — INESA</option>
+          <option value="louisiana-esa-tutoring.html">⚜️ Louisiana — LA GATOR Scholarship</option>
+          <option value="new-hampshire-esa-tutoring.html">🍁 New Hampshire — Education Freedom Account</option>
+          <option value="north-carolina-esa-tutoring.html">🏔️ North Carolina — ESA+</option>
+          <option value="south-carolina-esa-tutoring.html">🌙 South Carolina — ECENC / ESTF</option>
+          <option value="tennessee-esa-tutoring.html">🎸 Tennessee — Education Freedom Scholarship</option>
+          <option value="west-virginia-esa-tutoring.html">⛰️ West Virginia — Hope Scholarship</option>
+        </select>
+        <div style="position:absolute;right:18px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:18px">▾</div>
+      </div>
+      <a id="state-go-btn" href="#" onclick="return false;" style="background:var(--accent);color:#fff;padding:16px 28px;border-radius:14px;font-weight:700;font-size:15px;white-space:nowrap;opacity:0.5;pointer-events:none;transition:opacity .2s">Read Guide →</a>
+    </div>
+  </div>
+
+  <script>
+  function goToState(val) {
+    var btn = document.getElementById('state-go-btn');
+    if (val) {
+      btn.href = val;
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      window.location = val;
+    } else {
+      btn.href = '#';
+      btn.style.opacity = '0.5';
+      btn.style.pointerEvents = 'none';
+    }
+  }
+  </script>
+
   <div class="states-grid">
 
     <!-- Arizona -->
