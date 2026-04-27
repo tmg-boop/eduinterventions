@@ -1,0 +1,9 @@
+/about                                      /                   301
+/contact                                    /                   301
+/referral-info                              /                   301
+/services-store                             /                   301
+/services-store/p/basic-service-l9zf3       /                   301
+/services-store/p/advanced-service-m887r    /                   301
+/services-store/p/intermediate-service-ps3zd /                  301
+/esa                                        /esa.html           301
+/blog                                       /                   301
