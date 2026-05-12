@@ -767,20 +767,13 @@ function filterTeam(spec,btn){
 
 <script>
   // Auto-navigate to contact page if coming from ESA page CTA
-  window.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('load', function() {
     if (sessionStorage.getItem('goToContact') === '1') {
       sessionStorage.removeItem('goToContact');
-      var contactBtn = document.querySelector('[onclick*="page-contact"]') || 
-                       document.querySelector('[onclick*="'contact'"]');
-      if (contactBtn) {
-        contactBtn.click();
-      } else {
-        showPage('contact');
-      }
       setTimeout(function() {
-        var form = document.getElementById('page-contact');
-        if (form) form.scrollIntoView({behavior: 'smooth'});
-      }, 100);
+        showPage('contact');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }, 150);
     }
   });
 </script>
