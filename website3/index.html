@@ -604,6 +604,8 @@ footer{background:var(--text-dark);color:#fff;padding:60px 8% 30px}
       <div class="blog-card" data-cat="esa" style="cursor:pointer" onclick="window.location='new-hampshire-esa-tutoring.html'"><div class="blog-img" style="background:#F0F5FF">🍁</div><div class="blog-body"><span class="blog-cat">ESA &amp; School Choice</span><h3>How to Use New Hampshire's Education Freedom Account for Tutoring</h3><p>NH's EFA is now universal — open to all families. ~$4,419/year for tutoring. Unused funds roll over year to year.</p><div class="blog-meta"><span>2025</span><span>·</span><span>8 min read</span></div><span style="color:var(--primary);font-weight:700;font-size:14px;margin-top:10px;display:inline-block">Read Article →</span></div></div>
       <div class="blog-card" data-cat="esa" style="cursor:pointer" onclick="window.location='south-carolina-esa-tutoring.html'"><div class="blog-img" style="background:#FFF5F0">🌙</div><div class="blog-body"><span class="blog-cat">ESA &amp; School Choice</span><h3>How South Carolina Families Can Use Scholarship Funds for Tutoring</h3><p>SC's ECENC and ESTF programs provide up to $11,000 for exceptional needs students. Act fast — the cap fills within days.</p><div class="blog-meta"><span>2025</span><span>·</span><span>8 min read</span></div><span style="color:var(--primary);font-weight:700;font-size:14px;margin-top:10px;display:inline-block">Read Article →</span></div></div>
 
+      <div class="blog-card" data-cat="parents" style="cursor:pointer" onclick="window.location='dyscalculia-signs-intervention.html'"><div class="blog-img" style="background:#FFF9E6">🔢</div><div class="blog-body"><span class="blog-cat">Math Learning Differences</span><h3>What Is Dyscalculia? Signs Your Child May Have It — And What Actually Helps</h3><p>Dyscalculia is the math equivalent of dyslexia — affecting 5-7% of children but far less recognized. Here are the warning signs at every age and what research says works.</p><div class="blog-meta"><span>2026</span><span>·</span><span>10 min read</span></div><span style="color:var(--primary);font-weight:700;font-size:14px;margin-top:10px;display:inline-block">Read Article →</span></div></div>
+
       <div class="blog-card" data-cat="parents" style="cursor:pointer" onclick="window.location='math-tutoring.html'"><div class="blog-img" style="background:#FFF9E6">🔢</div><div class="blog-body"><span class="blog-cat">Math Foundations</span><h3>Virtual Math Tutoring That Actually Makes Sense to Your Child</h3><p>Most kids who struggle with math aren't bad at math — they're missing foundational pieces nobody went back to fix. Here's how we build the base every student needs.</p><div class="blog-meta"><span>2025</span><span>·</span><span>7 min read</span></div><span style="color:var(--primary);font-weight:700;font-size:14px;margin-top:10px;display:inline-block">Learn More →</span></div></div>
 
       <div class="blog-card" data-cat="literacy" style="cursor:pointer" onclick="window.location='orton-gillingham-tutoring.html'"><div class="blog-img" style="background:#EEF0FF">📖</div><div class="blog-body"><span class="blog-cat">Structured Literacy</span><h3>What Is Orton-Gillingham? A Parent's Complete Guide</h3><p>You've heard the term everywhere — but what is it actually? What happens in a real session? And how do you know you're getting the real thing? Here's everything you need to know.</p><div class="blog-meta"><span>2025</span><span>·</span><span>10 min read</span></div><span style="color:var(--primary);font-weight:700;font-size:14px;margin-top:10px;display:inline-block">Read Article →</span></div></div>
@@ -762,5 +764,26 @@ function filterTeam(spec,btn){
   document.querySelectorAll('.tutor-card').forEach(c=>{c.style.display=(spec==='all'||c.dataset.spec===spec)?'':'none'});
 }
 </script>
+
+<script>
+  // Auto-navigate to contact page if coming from ESA page CTA
+  window.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('goToContact') === '1') {
+      sessionStorage.removeItem('goToContact');
+      var contactBtn = document.querySelector('[onclick*="page-contact"]') || 
+                       document.querySelector('[onclick*="'contact'"]');
+      if (contactBtn) {
+        contactBtn.click();
+      } else {
+        showPage('contact');
+      }
+      setTimeout(function() {
+        var form = document.getElementById('page-contact');
+        if (form) form.scrollIntoView({behavior: 'smooth'});
+      }, 100);
+    }
+  });
+</script>
+
 </body>
 </html>
